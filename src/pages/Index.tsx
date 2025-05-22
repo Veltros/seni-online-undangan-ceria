@@ -1,12 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from "react";
+import { Toaster } from "sonner";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import TentangSection from "@/components/TentangSection";
+import AcaraSection from "@/components/AcaraSection";
+import DaftarSection from "@/components/DaftarSection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "Pentas Seni SMK Ceria 2025";
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Toaster position="top-center" />
+      <Header />
+      <main>
+        <Hero />
+        <TentangSection />
+        <AcaraSection />
+        <DaftarSection />
+      </main>
+      <Footer />
     </div>
   );
 };
